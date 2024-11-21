@@ -8,32 +8,37 @@ body {
 }
 
 .loader {
-    display: flex;
-    justify-content: space-between;
-    width: 60px;
-}
-
-.dot {
-    width: 15px;
-    height: 15px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    background-color: #3498db;
-    animation: bounce 0.6s infinite alternate;
+    border: 10px solid transparent;
+    border-top-color: #3498db;
+    animation: spin 1s linear infinite, colorChange 2s linear infinite;
 }
 
-.dot:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.dot:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes bounce {
+@keyframes spin {
     0% {
-        transform: translateY(0);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translateY(-20px);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        border-top-color: #3498db;
+    }
+    25% {
+        border-top-color: #e74c3c;
+    }
+    50% {
+        border-top-color: #f1c40f;
+    }
+    75% {
+        border-top-color: #2ecc71;
+    }
+    100% {
+        border-top-color: #3498db;
     }
 }
