@@ -1,32 +1,12 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
+let percentage = 0;
+const percentageElement = document.getElementById('percentage');
 
-.loading-container {
-    text-align: center;
-}
-
-.gunfire-animation {
-    width: 100px;
-    height: 100px;
-    background: url('gunfire.gif') no-repeat center center; /* Replace with your gunfire image */
-    background-size: cover;
-    animation: flash 0.5s infinite;
-}
-
-@keyframes flash {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.percentage {
-    font-size: 2em;
-    margin-top: 20px;
-}
+const loadingInterval = setInterval(() => {
+    if (percentage < 100) {
+        percentage++;
+        percentageElement.textContent = percentage + '%';
+    } else {
+        clearInterval(loadingInterval);
+        // You can redirect or perform another action here after loading is complete
+    }
+}, 100); // Adjust the interval for speed of loading
