@@ -1,5 +1,7 @@
 let percentage = 0;
 const percentageElement = document.getElementById('percentage');
+const loadingContainer = document.getElementById('loading-container');
+const landingContainer = document.getElementById('landing-container');
 
 const loadingInterval = setInterval(() => {
     if (percentage < 100) {
@@ -7,6 +9,11 @@ const loadingInterval = setInterval(() => {
         percentageElement.textContent = percentage + '%';
     } else {
         clearInterval(loadingInterval);
-        // You can redirect or perform another action here after loading is complete
+        loadingContainer.style.display = 'none';
+        landingContainer.style.display = 'block';
     }
 }, 100); // Adjust the interval for speed of loading
+
+function toggleForms() {
+    const signInForm = document.getElementById('sign-in-form');
+    const signUpForm = document.getElementById('sign-up
