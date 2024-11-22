@@ -23,6 +23,4 @@ function toggleForms() {
         signUpForm.style.display = 'none';
     } else {
         signInForm.style.display = 'none';
-        signUpForm.style.display = 'block';
-    }
-}
+        signUpForm.style.display = '
