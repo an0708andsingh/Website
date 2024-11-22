@@ -6,6 +6,7 @@ body {
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
+    margin: 0;
 }
 
 .loading-container {
@@ -29,4 +30,37 @@ body {
 .percentage {
     font-size: 2em;
     margin-top: 20px;
+}
+
+.landing-container {
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.form {
+    margin: 20px auto;
+    display: inline-block;
+    text-align: left;
+}
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
