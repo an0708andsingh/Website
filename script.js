@@ -16,4 +16,13 @@ const loadingInterval = setInterval(() => {
 
 function toggleForms() {
     const signInForm = document.getElementById('sign-in-form');
-    const signUpForm = document.getElementById('sign-up
+    const signUpForm = document.getElementById('sign-up-form');
+
+    if (signInForm.style.display === 'none') {
+        signInForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+    } else {
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'block';
+    }
+}
