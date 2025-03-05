@@ -1,23 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Page Title</title>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Sign Up</h2>
-        <form id="sign-up-form">
-            <input type="text" id="username" placeholder="Username" aria-label="Username" required>
-            <input type="email" id="email" placeholder="Email" aria-label="Email" required>
-            <input type="password" id="password" placeholder="Password" aria-label="Password" required>
-            <button type="button" onclick="submitSignUp()">Sign Up</button>
-        </form>
-        <p id="response-message"></p>
-    </div>
-
-    <script src="script.js"></script>
+    <table border="2" align="center"> 
+        <tr>  
+            <td colspan="9" align="center"> <h2>Amtics Time Table 2nd Semester</h2> </td> 
+        </tr>
+        <tr align="center">
+            <td>Time</td>
+            <td>8:30-9:30</td>  
+            <td>9:30-10:30</td>
+            <td>10:30-10:45</td>
+            <td>10:45-11:45</td>
+            <td>11:45-12:45</td>  
+            <td>12:45-1:30</td>
+            <td>1:30-2:30</td>
+            <td>2:30-3:30</td>  
+        </tr>
+        <tr align="center">  
+            <td>Monday</td>  
+            <td>CA <br> (EA) </td>  
+            <td>DSS <br> (HPP)</td>  
+            <td rowspan="5">Break</td>  
+            <td>DLCD <br> (*****)</td>  
+            <td>MOOC <br> (EA)</td>  
+            <td rowspan="5">Lunch Break</td>  
+            <td colspan="2">IOS Lab <br> (DP/VTP)</td>  
+        </tr>  
+        <tr align="center">
+            <td>Tuesday</td>  
+            <td colspan="2">FOL Lab <br> (TK)</td>  
+            <td>PC <br> (UP)</td>  
+            <td>DLCD <br> (*****)</td>  
+            <td colspan="2">WD Lab <br> (VMB)</td>  
+        </tr>
+        <tr align="center">  
+            <td>Wednesday</td>  
+            <td>CA <br> (VMB)</td>  
+            <td>MOOC <br> (MCP)</td>  
+            <td colspan="2">WD Lab 2 <br> (VMB/EA)</td>  
+            <td>PC <br> (VS)</td>  
+            <td>DT <br> (VS)</td>  
+        </tr>
+        <tr align="center">  
+            <td>Thursday</td>
+            <td colspan="2">ES JD hall <br> (VMP)</td>  
+            <td colspan="2">DLCD Lab <br> (*****)</td>  
+            <td>LA (DSS) <br> (DP)</td>
+            <td> LA (DSS) <br> (DP)</td>
+        </tr>
+        <tr align="center">  
+            <td>Friday</td>  
+            <td colspan="2">PY lab 1 <br> (HPP)</td>
+            <td>DSS <br> (SK)</td>  
+            <td>DLCD <br> (*****)</td>  
+            <td colspan="2">VM JD hall <br> (DP)</td>  
+        </tr> 
+ 
+        <tr align="center">  
+            <td>Saturday</td>
+            <td colspan="8">No Classes</td>  
+        </tr>
+    </table>
 </body>
 </html>
