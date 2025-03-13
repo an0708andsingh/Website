@@ -1,67 +1,88 @@
-<html>
+Here’s an example of a product page using internal and inline CSS with the specified selectors (body, h1, p, hr, img) and properties (color, font, text, background, border).
+
+
+---
+
+Internal CSS (inside <style> tag)
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* Body Styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            color: #007bff;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        /* Paragraph Styling */
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Horizontal Rule Styling */
+        hr {
+            border: 2px solid #007bff;
+            width: 50%;
+        }
+
+        /* Image Styling */
+        img {
+            width: 300px;
+            height: auto;
+            border: 3px solid #007bff;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <table border="2" align="center"> 
-        <tr>  
-            <td colspan="9" align="center"> <h2>Amtics Time Table 2nd Semester</h2> </td> 
-        </tr>
-        <tr align="center">
-            <td>Time</td>
-            <td>8:30-9:30</td>  
-            <td>9:30-10:30</td>
-            <td>10:30-10:45</td>
-            <td>10:45-11:45</td>
-            <td>11:45-12:45</td>  
-            <td>12:45-1:30</td>
-            <td>1:30-2:30</td>
-            <td>2:30-3:30</td>  
-        </tr>
-        <tr align="center">  
-            <td>Monday</td>  
-            <td>CA <br> (EA) </td>  
-            <td>DSS <br> (HPP)</td>  
-            <td rowspan="5">Break</td>  
-            <td>DLCD <br> (JAP)</td>  
-            <td>MOOC <br> (EA)</td>  
-            <td rowspan="5">Lunch Break</td>  
-            <td colspan="2">IOS Lab <br> (DP/VTP)</td>  
-        </tr>  
-        <tr align="center">
-            <td>Tuesday</td>  
-            <td colspan="2">FOL Lab <br> (TK)</td>  
-            <td>PC <br> (UP)</td>  
-            <td>DLCD <br> (JAP)</td>  
-            <td colspan="2">WD Lab <br> (VMB)</td>  
-        </tr>
-        <tr align="center">  
-            <td>Wednesday</td>  
-            <td>CA <br> (VMB)</td>  
-            <td>MOOC <br> (MCP)</td>  
-            <td colspan="2">WD Lab 2 <br> (VMB/EA)</td>  
-            <td>PC <br> (VS)</td>  
-            <td>DT <br> (VS)</td>  
-        </tr>
-        <tr align="center">  
-            <td>Thursday</td>
-            <td colspan="2">ES JD hall <br> (VMP)</td>  
-            <td colspan="2">DLCD Lab <br> (JAP)</td>  
-            <td>LA (DSS) <br> (DP)</td>
-            <td> LA (DSS) <br> (DP)</td>
-        </tr>
-        <tr align="center">  
-            <td>Friday</td>  
-            <td colspan="2">PY lab 1 <br> (HPP)</td>
-            <td>DSS <br> (SK)</td>  
-            <td>DLCD <br> (*****)</td>  
-            <td colspan="2">VM JD hall <br> (DP)</td>  
-        </tr> 
- 
-        <tr align="center">  
-            <td>Saturday</td>
-            <td colspan="8">No Classes</td>  
-        </tr>
-    </table>
+
+    <h1>Our Latest Product</h1>
+    <hr>
+    <img src="product.jpg" alt="Product Image">
+    
+    <p style="color: #555; font-size: 16px; background-color: #e9ecef; border: 1px solid #ddd; padding: 10px;">
+        This is our brand-new product that offers high quality and amazing features.
+    </p>
+
 </body>
 </html>
+
+
+---
+
+Explanation of CSS Usage:
+
+1. Internal CSS (inside <style> tag)
+
+Applied to body, h1, p, hr, and img.
+
+Defines global styles like background color, font, text alignment, and borders.
+
+
+
+2. Inline CSS (inside style attribute in <p>)
+
+Used to apply a background color, text color, font size, and border for a specific paragraph.
+
+
+
+
+
+---
+
+Would you like any modifications or additional features for this page?
+
