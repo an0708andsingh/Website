@@ -1,0 +1,66 @@
+/* External CSS - style.css */
+
+body {
+  background-color: #f3f9ff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#main-heading {
+  background-color: #004aad;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 4px solid #003580;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.product-item {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.product-name {
+  color: #004aad;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-price {
+  color: green;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #ff6f00;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
