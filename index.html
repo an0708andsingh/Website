@@ -1,26 +1,149 @@
 <!DOCTYPE html>
-<html>
-<body>
-<table border= 1px solid black;> 
-<tr> 
-<th colspan="2"> Lang and Frameworks </th>
-</tr>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electronic Appliances</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #d9e7ff, #ffffff);
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
 
-<tr>
-<td> Python </td>
-<td> DJANGO </td>
-</tr>
-<tr> 
-<td rowspan="2"> Java Script</td>
-<td> React.js </td>
-</tr>
-<tr>
-<td>Vue.js</td>
-</tr>
-<tr> 
-<td> Ruby </td> 
-<td> Ruby On Rails </td> 
-</tr>
-</table>
+    h1 {
+      color: #0a58ca;
+      background-color: #dceeff;
+      padding: 15px;
+      border: 2px solid #0a58ca;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 350px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 2px solid #0a58ca;
+      background-color: #fff;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: justify;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buy-btn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .cart-btn {
+      background-color: #ffc107;
+      color: black;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Latest Electronic Appliances</h1>
+
+  <div class="product-container">
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/television/u/v/o/-original-imah2v2gamua43wz.jpeg?q=70&crop=false" alt="Smart TV">
+      <p><strong>Smart TV</strong><br>
+      <span class="price">₹24,999</span><br>
+      SAMSUNG New D Series Brighter Crystal 4K Vision Pro (2024 Edition)...</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/microwave-new/i/r/o/-original-imah6dzajzhbqfum.jpeg?q=70&crop=false" alt="Microwave Oven">
+      <p><strong>Microwave Oven</strong><br>
+      <span class="price">₹7,999</span><br>
+      LG 20 L Solo Microwave with i-wave Tech, Indian Cuisine Menu...</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/washing-machine-new/7/c/b/-original-imahahgeafrhpag3.jpeg?q=70&crop=false" alt="Washing Machine">
+      <p><strong>Washing Machine</strong><br>
+      <span class="price">₹21,999</span><br>
+      SAMSUNG 8 kg 5-star Top Load with Ecobubble, Super Speed, Inverter...</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+    <!-- New Products Added -->
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/air-conditioner-new/x/b/f/-original-imah8p4ggf8yrzhq.jpeg?q=70&crop=false" alt="Air Conditioner">
+      <p><strong>Air Conditioner</strong><br>
+      <span class="price">₹44,999</span><br>
+      Panasonic 2025 Model 1.5 Ton 5 Star Split Inverter AC with Wi-fi Connect - White  (CS-NU18AKY5WX/CU-NU18AKY5WX, Copper Condenser)</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/water-purifier/p/r/x/ace-copper-kent-original-imah9qjcd2xyh3bm.jpeg?q=70&crop=false" alt="Juicer">
+      <p><strong>Water Purifier</strong><br>
+      <span class="price">₹16,999</span><br>
+      PhilKENT Ace Copper 8 L RO + UV + UF + TDS Control + UV in Tank + Copper Water Purifier Suitable for all - Borewell, Tanker, Municipality Water  (White)</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/refrigerator-new/j/i/3/-original-imah4nehsya8dbkc.jpeg?q=70&crop=false" alt="Refrigerator">
+      <p><strong>Refrigerator</strong><br>
+      <span class="price">₹51,999</span><br>
+      SAMSUNG 419 L Frost Free Double Door 3 Star Convertible Refrigerator with Convertible 5-in-1, Digital Inverter,WiFi Enabled Bespoke AI Refrigerator  (Black DOI, RT45DG6A4DB1HL)</p>
+      <button class="btn buy-btn">Buy Now</button>
+      <button class="btn cart-btn">Add to Cart</button>
+    </div>
+
+  </div>
 </body>
-</html>
+  </html>
