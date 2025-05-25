@@ -16,21 +16,48 @@
       font-family: 'Poppins', sans-serif;
       background: url('https://images.unsplash.com/photo-1599058917212-dbbd9fa28b0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .envelope-container {
+      position: relative;
       text-align: center;
-      backdrop-filter: brightness(0.8);
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    .envelope-icon {
+      font-size: 6rem;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 2rem;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .envelope-container:hover .envelope-icon {
+      transform: scale(1.1);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
     .container {
+      display: none;
       background: rgba(255, 255, 255, 0.1);
       padding: 3rem;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
       max-width: 650px;
       backdrop-filter: blur(15px);
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h1 {
       font-size: 3rem;
@@ -90,7 +117,12 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="envelope-container" onclick="openInvitation()">
+    <i class="fas fa-envelope envelope-icon"></i>
+    <p style="color:white; margin-top: 10px; font-size: 1.2rem;">Tap to open your invitation</p>
+  </div>
+
+  <div class="container" id="inviteContent">
     <h1>You're Invited 🎉</h1>
     <h2>Grand Opening of <span class="highlight">Anand Mobile & Electrics</span></h2>
     <div class="details">
@@ -103,7 +135,7 @@
     </div>
     <div class="countdown" id="countdown"></div>
     <div class="contact">
-      <p><strong>📞 Contact:</strong> 9725569604, 8849297161</p>
+      <p><strong>📞 Contact:</strong> 9725569604, 884929716</p>
       <p><strong>📧 Email:</strong> aks0317electronics@gmail.com</p>
     </div>
     <div class="social-icons">
@@ -117,6 +149,11 @@
   </div>
 
   <script>
+    function openInvitation() {
+      document.querySelector(".envelope-container").style.display = "none";
+      document.getElementById("inviteContent").style.display = "block";
+    }
+
     const eventDate = new Date("May 25, 2025 12:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
 
