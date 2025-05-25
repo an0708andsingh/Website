@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grand Opening – Anand Mobile & Electrics</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -24,23 +25,25 @@
       backdrop-filter: brightness(0.8);
     }
     .container {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(255, 255, 255, 0.1);
       padding: 3rem;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
+      max-width: 650px;
+      backdrop-filter: blur(15px);
     }
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #ffc107;
+      color: #ffd700;
+      text-shadow: 2px 2px 5px #000;
     }
     h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       font-weight: 600;
     }
-    .details p {
+    .details p, .contact p {
       font-size: 1.1rem;
       margin: 0.3rem 0;
     }
@@ -48,6 +51,9 @@
       margin: 1.5rem 0;
       font-size: 1.1rem;
       line-height: 1.6;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-radius: 12px;
     }
     .countdown {
       font-size: 1.5rem;
@@ -59,31 +65,51 @@
       margin-top: 2rem;
       font-size: 1rem;
       line-height: 1.5;
-      color: #eee;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #ffd700;
     }
     footer {
       margin-top: 2rem;
       font-size: 0.9rem;
       color: #ccc;
     }
+    .highlight {
+      color: #ffeb3b;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>You're Invited 🎉</h1>
-    <h2>Grand Opening of<br><strong>Anand Mobile & Electrics</strong></h2>
+    <h2>Grand Opening of <span class="highlight">Anand Mobile & Electrics</span></h2>
     <div class="details">
       <p><strong>📅 Date:</strong> May 25, 2025</p>
       <p><strong>🕛 Time:</strong> 12:00 PM</p>
       <p><strong>📍 Location:</strong> Near to the old shop, Sachin, Surat</p>
     </div>
     <div class="message">
-      <p>We are proud to announce the grand opening of our new store!<br>Join us as we launch into a new chapter of providing excellent electronics and mobile repair services. Your presence will make our day extra special!</p>
+      <p>We’re thrilled to welcome you to the launch of our brand-new electronics & mobile repair store.<br>Enjoy <span class="highlight">exclusive offers</span> and a warm welcome as we begin a new journey with you!</p>
     </div>
     <div class="countdown" id="countdown"></div>
     <div class="contact">
       <p><strong>📞 Contact:</strong> 9725569604, 884929716</p>
       <p><strong>📧 Email:</strong> aks0317electronics@gmail.com</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://wa.me/919725569604" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:aks0317electronics@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://maps.google.com?q=Sachin+Surat" target="_blank" title="View on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
     </div>
     <footer>
       © 2025 Anand Mobile & Electrics | Sachin, Surat
