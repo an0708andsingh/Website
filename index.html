@@ -7,24 +7,20 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      overflow: hidden;
     }.envelope {
   width: 200px;
   height: 150px;
-  background-color: #d62828;
+  background-color: #e63946;
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
-}
-
-.envelope:hover {
-  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .envelope::before,
@@ -40,58 +36,59 @@
   top: 0;
   left: 0;
   border-width: 75px 100px 0 100px;
-  border-color: #f77f00 transparent transparent transparent;
+  border-color: #f1faee transparent transparent transparent;
 }
 
 .envelope::after {
   bottom: 0;
   left: 0;
   border-width: 0 100px 75px 100px;
-  border-color: transparent transparent #fcbf49 transparent;
+  border-color: transparent transparent #a8dadc transparent;
+}
+
+.click-msg {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
 }
 
 .invitation {
   display: none;
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 20px;
-  background-color: #fffaf0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff3e0;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
   max-width: 400px;
 }
 
 .invitation h2 {
+  color: #e63946;
   margin-bottom: 10px;
-  color: #d62828;
 }
 
 .invitation p {
-  margin: 5px 0;
+  margin: 8px 0;
   color: #333;
-}
-
-.click-msg {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #6d6875;
 }
 
 .icon {
   display: flex;
   align-items: center;
-  margin-top: 8px;
   justify-content: center;
-}
-
-.icon span {
-  margin-left: 8px;
+  margin-top: 10px;
   color: #333;
 }
 
+.icon span {
+  margin-left: 6px;
+}
+
 .icon a {
-  margin-left: 8px;
-  color: #1a73e8;
+  margin-left: 6px;
+  color: #0077cc;
   text-decoration: none;
 }
 
@@ -100,11 +97,12 @@
 <body>
   <div class="envelope" onclick="toggleMessage()"></div>
   <div class="click-msg">Click to view the invitation message</div>  <div class="invitation" id="invitation">
-    <h2>You're Invited!</h2>
-    <p>We are delighted to invite you to the grand opening of our new shop:</p>
-    <p><strong>Anand Mobile & Electrics</strong></p>
-    <p>Join us on: <strong>Tomorrow, 12 PM</strong></p>
-    <p>Location: <strong>Near to the old shop</strong></p>
+    <h2>You're Warmly Invited!</h2>
+    <p>With blessings and excitement, we invite you to the</p>
+    <p><strong>Grand Opening of Anand Mobile & Electrics</strong></p>
+    <p><strong>Date:</strong> 26th May 2025 (Tomorrow)</p>
+    <p><strong>Time:</strong> 12:00 PM</p>
+    <p><strong>Location:</strong> Near to the old shop</p>
     <div class="icon">📍 <a href="https://maps.app.goo.gl/ZpaHA1DUfDwZiECz5" target="_blank">3VF4+HQ Surat, Gujarat</a></div>
     <div class="icon">📞 <span>9725569604, 8849297161</span></div>
     <div class="icon">✉️ <span>aks0317electronics@gmail.com</span></div>
