@@ -2,142 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop Inauguration Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Opening – Anand Mobile & Electrics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      padding: 0;
     }
-
-    .envelope-wrapper {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1599058917212-dbbd9fa28b0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      padding: 1rem;
+    }
+    .envelope-container {
       position: relative;
+      text-align: center;
       cursor: pointer;
-      width: 220px;
-      height: 140px;
-      margin-bottom: 12px;
+      animation: pulse 2s infinite;
     }
-
-    .envelope {
-      width: 100%;
-      height: 100%;
-      background: #e63946;
-      position: relative;
-      border-radius: 5px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease;
+    .envelope-icon {
+      font-size: 6rem;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      background: #c62828;
+      padding: 2rem;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-
-    .envelope::before,
-    .envelope::after {
-      content: '';
-      position: absolute;
-      border-style: solid;
+    .envelope-container:hover .envelope-icon {
+      transform: scale(1.1);
     }
-
-    .envelope::before {
-      top: 0;
-      left: 0;
-      border-width: 70px 110px 0 110px;
-      border-color: #fff0 transparent transparent transparent;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
-
-    .envelope::after {
-      bottom: 0;
-      left: 0;
-      border-width: 0 110px 70px 110px;
-      border-color: transparent transparent #f7d9d9 transparent;
-    }
-
-    .click-msg {
-      font-size: 1rem;
-      font-weight: bold;
-      color: #222;
-      text-align: center;
-    }
-
-    .invitation {
+    .container {
       display: none;
-      margin-top: 25px;
-      padding: 25px;
-      background-color: #fffdf5;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.85);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      max-width: 650px;
+      color: #fff;
       text-align: center;
-      max-width: 400px;
-      animation: fadeIn 1s ease;
+      animation: fadeIn 1s ease forwards;
+      color: #212121;
     }
-
-    .invitation h2 {
-      color: #d62828;
-      margin-bottom: 10px;
-    }
-
-    .invitation p {
-      margin: 8px 0;
-      color: #333;
-      font-size: 16px;
-    }
-
-    .icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 10px;
-      color: #444;
-    }
-
-    .icon span {
-      margin-left: 6px;
-    }
-
-    .icon a {
-      margin-left: 6px;
-      color: #0077cc;
-      text-decoration: none;
-    }
-
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ffd700;
+      text-shadow: 2px 2px 5px #000;
+      color: #c62828;
+      text-shadow: 1px 1px 2px #888;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .details p, .contact p {
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
+    }
+    .message {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.1);
+      background: #fff3e0;
+      padding: 1rem;
+      border-radius: 12px;
+      color: #333;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00e676;
+      color: #2e7d32;
+      margin-top: 1.5rem;
+    }
+    .contact {
+      margin-top: 2rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .social-icons {
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      color: #fff;
+      color: #c62828;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #ffd700;
+      color: #000;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      color: #555;
+    }
+    .highlight {
+      color: #ffeb3b;
+      color: #c62828;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-
-  <div class="envelope-wrapper" onclick="toggleInvitation()">
-    <div class="envelope"></div>
+  <div class="envelope-container" onclick="openInvitation()">
+    <i class="fas fa-envelope envelope-icon"></i>
+    <p style="color:white; margin-top: 10px; font-size: 1.2rem;">Tap to open your invitation</p>
   </div>
-  <div class="click-msg">📨 Click the envelope to view the invitation</div>
 
-  <div class="invitation" id="invitation">
-    <h2>You're Warmly Invited!</h2>
-    <p>With joy and blessings, we invite you to the</p>
-    <p><strong>Grand Opening of Anand Mobile & Electrics</strong></p>
-    <p><strong>Date:</strong> 25th May 2025 (Today)</p>
-    <p><strong>Time:</strong> 12:00 PM</p>
-    <p><strong>Location:</strong> Near to the old shop</p>
-    <div class="icon">📍 
-      <a href="https://maps.app.goo.gl/ZpaHA1DUfDwZiECz5" target="_blank">
-        3VF4+HQ Surat, Gujarat
-      </a>
+  <div class="container" id="inviteContent">
+    <h1>You're Invited 🎉</h1>
+    <h2>Grand Opening of <span class="highlight">Anand Mobile & Electrics</span></h2>
+    <div class="details">
+      <p><strong>📅 Date:</strong> May 25, 2025</p>
+      <p><strong>🕛 Time:</strong> 12:00 PM</p>
+      <p><strong>📍 Location:</strong> Near to the old shop, Sachin, Surat</p>
     </div>
-    <div class="icon">📞 <span>9725569604, 8849297161</span></div>
-    <div class="icon">✉️ <span>aks0317electronics@gmail.com</span></div>
+    <div class="message">
+      <p>We’re thrilled to welcome you to the launch of our brand-new electronics & mobile repair store.<br>Enjoy <span class="highlight">exclusive offers</span> and a warm welcome as we begin a new journey with you!</p>
+    </div>
+    <div class="countdown" id="countdown"></div>
+    <div class="contact">
+      <p><strong>📞 Contact:</strong> 9725569604, 8849297161</p>
+      <p><strong>📧 Email:</strong> aks0317electronics@gmail.com</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://wa.me/919725569604" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:aks0317electronics@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://maps.app.goo.gl/ejyWChYosh12H1Df7" target="_blank" title="View on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+    <footer>
+      © 2025 Anand Mobile & Electrics | Sachin, Surat
+    </footer>
   </div>
 
   <script>
-    function toggleInvitation() {
-      const invitation = document.getElementById('invitation');
-      invitation.style.display = invitation.style.display === 'none' || invitation.style.display === '' ? 'block' : 'none';
+    function openInvitation() {
+      document.querySelector(".envelope-container").style.display = "none";
+      document.getElementById("inviteContent").style.display = "block";
     }
+
+    const eventDate = new Date("May 25, 2025 12:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff < 0) {
+        clearInterval(timer);
+        countdownEl.innerHTML = "🎈 We are now open! Come celebrate with us!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `⏳ Opening in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
   </script>
 </body>
 </html>
