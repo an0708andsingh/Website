@@ -3,53 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anand Mobile & Electrics – Grand Opening</title>
+  <title>Grand Opening – Anand Mobile & Electrics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
       margin: 0;
-      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
     }
     .container {
-      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      max-width: 500px;
     }
     h1 {
-      color: #1a73e8;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #ffdd57;
     }
-    .details {
-      margin: 1rem 0;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .details p {
+      margin: 0.5rem 0;
       font-size: 1.2rem;
     }
+    .message {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
     .countdown {
-      font-size: 2rem;
-      color: #d93025;
       margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #e0e0e0;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>You're Invited!</h1>
+    <h1>🎉 You're Invited!</h1>
     <h2>Grand Opening of<br><strong>Anand Mobile & Electrics</strong></h2>
     <div class="details">
-      <p><strong>Date:</strong> May 25, 2025</p>
-      <p><strong>Time:</strong> 12:00 PM</p>
-      <p><strong>Location:</strong> Near to the old shop, Sachin, Surat</p>
+      <p><strong>📅 Date:</strong> May 25, 2025</p>
+      <p><strong>🕛 Time:</strong> 12:00 PM</p>
+      <p><strong>📍 Location:</strong> Near to the old shop, Sachin, Surat</p>
     </div>
-    <p>We are excited to welcome you to the opening of our new store!<br>Your presence will make our celebration more special.</p>
+    <div class="message">
+      <p>We are thrilled to invite you to the grand opening of our new shop! 🎊<br>Your presence will add joy to this special moment. Come celebrate with us and check out our latest electronics and mobile repair services!</p>
+    </div>
 
     <div class="countdown" id="countdown"></div>
 
     <footer>
-      Anand Mobile & Electrics | Sachin, Surat
+      © 2025 Anand Mobile & Electrics | Designed with ❤️
     </footer>
   </div>
 
@@ -63,7 +85,7 @@
 
       if (diff < 0) {
         clearInterval(timer);
-        countdownEl.innerHTML = "We are now open!";
+        countdownEl.innerHTML = "🎈 We are now open! Come visit us!";
         return;
       }
 
@@ -72,7 +94,7 @@
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      countdownEl.innerHTML = `Opening in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      countdownEl.innerHTML = `⏳ Opening in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
   </script>
 </body>
