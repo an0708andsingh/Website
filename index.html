@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sports Kit Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anand Mobile & Electrics – Grand Opening</title>
   <style>
-    /* Internal CSS */
-    .special-offer {
-      background-color: #ffebcc;
-      border: 2px dashed orange;
-      padding: 10px;
-      margin-top: 10px;
-      font-style: italic;
-      color: #cc6600;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-
-    /* Styling Buy Button */
-    .buy-btn {
-      background-color: #27ae60;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      margin-top: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
+    .container {
+      padding: 2rem;
     }
-
-    .buy-btn:hover {
-      background-color: #1e8f50;
+    h1 {
+      color: #1a73e8;
+      font-size: 2.5rem;
+    }
+    .details {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+    }
+    .countdown {
+      font-size: 2rem;
+      color: #d93025;
+      margin-top: 2rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>You're Invited!</h1>
+    <h2>Grand Opening of<br><strong>Anand Mobile & Electrics</strong></h2>
+    <div class="details">
+      <p><strong>Date:</strong> May 25, 2025</p>
+      <p><strong>Time:</strong> 12:00 PM</p>
+      <p><strong>Location:</strong> Near to the old shop, Sachin, Surat</p>
+    </div>
+    <p>We are excited to welcome you to the opening of our new store!<br>Your presence will make our celebration more special.</p>
 
-  <h1 id="main-heading">Buy Best Sports Kits Online</h1>
+    <div class="countdown" id="countdown"></div>
 
-  <ul class="product-list">
-    <li class="product-item">
-      <img src="https://rukminim2.flixcart.com/image/416/416/k6ci8i80/kit/e/t/w/sports-laliga-football-kit-na-sports-trading-original-imafzt7shw4qsy4x.jpeg?q=70&crop=false" alt="Football Kit">
-      <div class="product-name">Football Kit</div>
-      <div class="product-price">₹1,999</div>
-      <button class="btn">Add to Cart</button>
-      <button class="buy-btn">Buy Now</button>
-    </li>
+    <footer>
+      Anand Mobile & Electrics | Sachin, Surat
+    </footer>
+  </div>
 
-    <li class="product-item">
-      <img src="https://m.media-amazon.com/images/I/41a6tztUANL._SX300_SY300_QL70_FMwebp_.jpg" alt="Cricket Kit">
-      <div class="product-name">Cricket Kit</div>
-      <div class="product-price">₹3,499</div>
-      <button class="btn">Add to Cart</button>
-      <button class="buy-btn">Buy Now</button>
-    </li>
+  <script>
+    const eventDate = new Date("May 25, 2025 12:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
 
-    <li class="product-item">
-      <img src="https://m.media-amazon.com/images/I/618sLOq8xGL._SX679_.jpg" alt="Basketball Kit">
-      <div class="product-name">Basketball Kit</div>
-      <div class="product-price">₹2,499</div>
-      <button class="btn">Add to Cart</button>
-      <button class="buy-btn">Buy Now</button>
-    </li>
-  </ul>
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
 
+      if (diff < 0) {
+        clearInterval(timer);
+        countdownEl.innerHTML = "We are now open!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Opening in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
 </body>
 </html>
