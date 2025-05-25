@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,103 +14,109 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-    }.envelope {
-  width: 200px;
-  height: 150px;
-  background-color: #e63946;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
+    }
 
-.envelope::before,
-.envelope::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
+    .envelope {
+      width: 200px;
+      height: 150px;
+      background-color: #e63946;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.envelope::before {
-  top: 0;
-  left: 0;
-  border-width: 75px 100px 0 100px;
-  border-color: #f1faee transparent transparent transparent;
-}
+    .envelope::before,
+    .envelope::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
 
-.envelope::after {
-  bottom: 0;
-  left: 0;
-  border-width: 0 100px 75px 100px;
-  border-color: transparent transparent #a8dadc transparent;
-}
+    .envelope::before {
+      top: 0;
+      left: 0;
+      border-width: 75px 100px 0 100px;
+      border-color: #f1faee transparent transparent transparent;
+    }
 
-.click-msg {
-  margin-top: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #222;
-}
+    .envelope::after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 100px 75px 100px;
+      border-color: transparent transparent #a8dadc transparent;
+    }
 
-.invitation {
-  display: none;
-  margin-top: 25px;
-  padding: 20px;
-  background-color: #fff3e0;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  max-width: 400px;
-}
+    .click-msg {
+      margin-top: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #222;
+    }
 
-.invitation h2 {
-  color: #e63946;
-  margin-bottom: 10px;
-}
+    .invitation {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 400px;
+    }
 
-.invitation p {
-  margin: 8px 0;
-  color: #333;
-}
+    .invitation h2 {
+      color: #e63946;
+      margin-bottom: 10px;
+    }
 
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  color: #333;
-}
+    .invitation p {
+      margin: 8px 0;
+      color: #333;
+    }
 
-.icon span {
-  margin-left: 6px;
-}
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      color: #333;
+    }
 
-.icon a {
-  margin-left: 6px;
-  color: #0077cc;
-  text-decoration: none;
-}
+    .icon span {
+      margin-left: 6px;
+    }
 
+    .icon a {
+      margin-left: 6px;
+      color: #0077cc;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <div class="envelope" onclick="toggleMessage()"></div>
-  <div class="click-msg">Click to view the invitation message</div>  <div class="invitation" id="invitation">
+  <div class="click-msg">Click to view the invitation message</div>
+
+  <div class="invitation" id="invitation">
     <h2>You're Warmly Invited!</h2>
     <p>With blessings and excitement, we invite you to the</p>
     <p><strong>Grand Opening of Anand Mobile & Electrics</strong></p>
-    <p><strong>Date:</strong> 26th May 2025 (Tomorrow)</p>
+    <p><strong>Date:</strong> 25th May 2025 (Today)</p>
     <p><strong>Time:</strong> 12:00 PM</p>
     <p><strong>Location:</strong> Near to the old shop</p>
     <div class="icon">📍 <a href="https://maps.app.goo.gl/ZpaHA1DUfDwZiECz5" target="_blank">3VF4+HQ Surat, Gujarat</a></div>
     <div class="icon">📞 <span>9725569604, 8849297161</span></div>
     <div class="icon">✉️ <span>aks0317electronics@gmail.com</span></div>
-  </div>  <script>
+  </div>
+
+  <script>
     function toggleMessage() {
       const msg = document.getElementById('invitation');
       msg.style.display = msg.style.display === 'none' || msg.style.display === '' ? 'block' : 'none';
     }
-  </script></body>
+  </script>
+</body>
 </html>
