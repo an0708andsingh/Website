@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop Inauguration Invitation</title>
   <style>
     body {
@@ -16,65 +16,74 @@
       height: 100vh;
     }
 
-    .envelope {
-      width: 200px;
-      height: 150px;
-      background-color: #e63946;
+    .envelope-wrapper {
       position: relative;
       cursor: pointer;
+      width: 220px;
+      height: 140px;
+      margin-bottom: 12px;
+    }
+
+    .envelope {
+      width: 100%;
+      height: 100%;
+      background: #e63946;
+      position: relative;
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
       transition: transform 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .envelope::before,
     .envelope::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 0;
       border-style: solid;
     }
 
     .envelope::before {
       top: 0;
       left: 0;
-      border-width: 75px 100px 0 100px;
-      border-color: #f1faee transparent transparent transparent;
+      border-width: 70px 110px 0 110px;
+      border-color: #fff0 transparent transparent transparent;
     }
 
     .envelope::after {
       bottom: 0;
       left: 0;
-      border-width: 0 100px 75px 100px;
-      border-color: transparent transparent #a8dadc transparent;
+      border-width: 0 110px 70px 110px;
+      border-color: transparent transparent #f7d9d9 transparent;
     }
 
     .click-msg {
-      margin-top: 12px;
       font-size: 1rem;
       font-weight: bold;
       color: #222;
+      text-align: center;
     }
 
     .invitation {
       display: none;
       margin-top: 25px;
-      padding: 20px;
-      background-color: #fff3e0;
+      padding: 25px;
+      background-color: #fffdf5;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       text-align: center;
       max-width: 400px;
+      animation: fadeIn 1s ease;
     }
 
     .invitation h2 {
-      color: #e63946;
+      color: #d62828;
       margin-bottom: 10px;
     }
 
     .invitation p {
       margin: 8px 0;
       color: #333;
+      font-size: 16px;
     }
 
     .icon {
@@ -82,7 +91,7 @@
       align-items: center;
       justify-content: center;
       margin-top: 10px;
-      color: #333;
+      color: #444;
     }
 
     .icon span {
@@ -94,28 +103,40 @@
       color: #0077cc;
       text-decoration: none;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <div class="envelope" onclick="toggleMessage()"></div>
-  <div class="click-msg">Click to view the invitation message</div>
+
+  <div class="envelope-wrapper" onclick="toggleInvitation()">
+    <div class="envelope"></div>
+  </div>
+  <div class="click-msg">📨 Click the envelope to view the invitation</div>
 
   <div class="invitation" id="invitation">
     <h2>You're Warmly Invited!</h2>
-    <p>With blessings and excitement, we invite you to the</p>
+    <p>With joy and blessings, we invite you to the</p>
     <p><strong>Grand Opening of Anand Mobile & Electrics</strong></p>
     <p><strong>Date:</strong> 25th May 2025 (Today)</p>
     <p><strong>Time:</strong> 12:00 PM</p>
     <p><strong>Location:</strong> Near to the old shop</p>
-    <div class="icon">📍 <a href="https://maps.app.goo.gl/ZpaHA1DUfDwZiECz5" target="_blank">3VF4+HQ Surat, Gujarat</a></div>
+    <div class="icon">📍 
+      <a href="https://maps.app.goo.gl/ZpaHA1DUfDwZiECz5" target="_blank">
+        3VF4+HQ Surat, Gujarat
+      </a>
+    </div>
     <div class="icon">📞 <span>9725569604, 8849297161</span></div>
     <div class="icon">✉️ <span>aks0317electronics@gmail.com</span></div>
   </div>
 
   <script>
-    function toggleMessage() {
-      const msg = document.getElementById('invitation');
-      msg.style.display = msg.style.display === 'none' || msg.style.display === '' ? 'block' : 'none';
+    function toggleInvitation() {
+      const invitation = document.getElementById('invitation');
+      invitation.style.display = invitation.style.display === 'none' || invitation.style.display === '' ? 'block' : 'none';
     }
   </script>
 </body>
