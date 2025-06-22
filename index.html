@@ -2,189 +2,250 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grand Opening – Anand Mobile & Electrics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    .envelope-container {
-      position: relative;
-      text-align: center;
-      cursor: pointer;
-      animation: pulse 2s infinite;
-    }
-    .envelope-icon {
-      font-size: 6rem;
-      color: white;
-      background: #c62828;
-      padding: 2rem;
-      border-radius: 50%;
-      transition: transform 0.3s;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .envelope-container:hover .envelope-icon {
-      transform: scale(1.1);
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .container {
-      display: none;
-      position: relative;
-      max-width: 650px;
-      color: #212121;
-      text-align: center;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
-    }
-    .content {
-      position: relative;
-      background: url('https://thumbs.dreamstime.com/b/pooja-kalash-vector-design-illustration-34447588.jpg') no-repeat center center/cover;
-      padding: 2rem;
-    }
-    .overlay {
-      background: rgba(255, 255, 255, 0.85); /* slightly more transparent than before */
-      padding: 2rem;
-      border-radius: 16px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #c62828;
-      text-shadow: 1px 1px 2px #fff;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: #ff9800;
-    }
-    .details p, .contact p {
-      font-size: 1.1rem;
-      margin: 0.3rem 0;
-    }
-    .message {
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 1rem;
-      border-radius: 12px;
-      color: #333;
-    }
-    .countdown {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #2e7d32;
-      margin-top: 1.2rem;
-    }
-    .contact {
-      margin-top: 2rem;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .social-icons {
-      margin-top: 1rem;
-    }
-    .social-icons a {
-      color: #c62828;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-    .social-icons a:hover {
-      color: #ffd700;
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    .highlight {
-      color: #f9a825;
-      font-weight: 600;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit 6 Quiz - NPTEL Linear Algebra</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="envelope-container" onclick="openInvitation()">
-    <i class="fas fa-envelope envelope-icon"></i>
-    <p style="color:white; margin-top: 10px; font-size: 1.2rem;">Tap to open your invitation</p>
-  </div>
-
-  <div class="container" id="inviteContent">
-    <div class="content">
-      <div class="overlay">
-        <h1>You're Invited 🎉</h1>
-        <h2>Grand Opening of <span class="highlight">Anand Mobile & Electrics</span></h2>
-        <div class="details">
-          <p><strong>📅 Date:</strong> May 25, 2025</p>
-          <p><strong>🕛 Time:</strong> 12:00 PM</p>
-          <p><strong>📍 Location:</strong> Near to the old shop, Kaushal Park, Sachin, Surat</p>
-        </div>
-        <div class="message">
-          <p>We’re thrilled to welcome you to the launch of our brand-new electronics & mobile repair store.<br>Enjoy <span class="highlight">exclusive offers</span> and a warm welcome as we begin a new journey with you!</p>
-        </div>
-        <div class="countdown" id="countdown"></div>
-        <div class="contact">
-          <p><strong>📞 Contact:</strong> 9725569604, 8849297161</p>
-          <p><strong>📧 Email:</strong> aks0317electronics@gmail.com</p>
-        </div>
-        <div class="social-icons">
-          <a href="https://wa.me/919725569604" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:aks0317electronics@gmail.com" title="Send Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://maps.app.goo.gl/ejyWChYosh12H1Df7" target="_blank" title="View on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
-        </div>
-        <footer>
-          © 2025 Anand Mobile & Electrics | Sachin, Surat
-        </footer>
-      </div>
-    </div>
+  <div class="quiz-container">
+    <h1>Unit 6: Underdetermined Systems Quiz</h1>
+    <form id="quizForm">
+      <div id="question-list"></div>
+      <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+    <div id="result"></div>
   </div>
 
   <script>
-    function openInvitation() {
-      document.querySelector(".envelope-container").style.display = "none";
-      document.getElementById("inviteContent").style.display = "block";
+    const questions = [
+      {
+        q: "1. An underdetermined system of linear equations has:",
+        options: ["A. A unique solution", "B. No solution", "C. Fewer equations than unknowns", "D. Equal number of equations and unknowns"],
+        answer: "C"
+      },
+      {
+        q: "2. The least-norm solution to an underdetermined system minimizes:",
+        options: ["A. The number of non-zero entries in the solution", "B. The error in predictions", "C. The Euclidean norm ∥ x ∥² subject to Ax = b", "D. The determinant of the coefficient matrix"],
+        answer: "C"
+      },
+      {
+        q: "3. In sparse recovery, the goal is to:",
+        options: ["A. Maximize the number of non-zero elements", "B. Find the solution with the fewest non-zero entries that satisfies the system", "C. Increase the condition number of the matrix", "D. Compute eigenvalues of the matrix"],
+        answer: "B"
+      },
+      {
+        q: "4. Which optimization technique is commonly used for sparse solutions in compressed sensing?",
+        options: ["A. L2 norm minimization", "B. Principal Component Analysis", "C. L1 norm minimization", "D. Singular value decomposition"],
+        answer: "C"
+      },
+      {
+        q: "5. Dictionary learning in signal processing is used to:",
+        options: ["A. Reduce data variance", "B. Identify principal components", "C. Learn a set of basis vectors for sparse representation of data", "D. Perform matrix inversion efficiently"],
+        answer: "C"
+      },
+      {
+        q: "6. In sparse coding, each input vector is approximated as:",
+        options: ["A. A sum of random projections", "B. A sparse linear combination of dictionary atoms", "C. An eigenvector of the data matrix", "D. A linear combination with full support"],
+        answer: "B"
+      },
+      {
+        q: "7. The inverse eigenvalue problem seeks to:",
+        options: ["A. Compute eigenvalues of a given matrix", "B. Find a matrix that has a given set of eigenvalues", "C. Minimize eigenvectors’ angles", "D. Determine the number of principal components"],
+        answer: "B"
+      },
+      {
+        q: "8. In the context of Markov chains, a stationary distribution π satisfies:",
+        options: ["A) π = P πᵀ", "B) πᵀ = πᵀP", "C) π P = π", "D) π = π"],
+        answer: "C"
+      },
+      {
+        q: "9. Given a stationary distribution π, a valid transition matrix P must satisfy:",
+        options: ["A. P is symmetric", "B. P is stochastic and π P = π", "C. P is invertible and sparse", "D. P has all negative entries"],
+        answer: "B"
+      },
+      {
+        q: "10. One approach to constructing a transition matrix P from a stationary distribution π is:",
+        options: ["A) P = π πᵀ", "B) Use P = D⁻¹A, where A is a symmetric matrix and D is a diagonal matrix with π", "C) Apply PCA on π", "D. Minimize the spectral norm of π"],
+        answer: "B"
+      },
+      {
+        q: "11. Which method is typically used to solve an underdetermined system Ax=b with many solutions?",
+        options: ["A. Gradient descent", "B. Moore-Penrose pseudoinverse", "C. Eigenvalue decomposition", "D. LU decomposition"],
+        answer: "B"
+      },
+      {
+        q: "12. In compressed sensing, which property helps in exact sparse recovery?",
+        options: ["A. Diagonal dominance", "B. Restricted Isometry Property (RIP)", "C. Toeplitz structure", "D. Low rank"],
+        answer: "B"
+      },
+      {
+        q: "13. Which norm is not typically used to promote sparsity?",
+        options: ["A. L0 norm", "B. L1 norm", "C. L2 norm", "D. Elastic net (L1 + L2)"],
+        answer: "C"
+      },
+      {
+        q: "14. In dictionary learning, the optimization alternates between:",
+        options: ["A. Data whitening and clustering", "B. Matrix factorization and eigenvalue updates", "C. Updating dictionary atoms and sparse coefficients", "D. Reducing rank and dimension"],
+        answer: "C"
+      },
+      {
+        q: "15. In the inverse eigenvalue problem, which is generally specified?",
+        options: ["A. Only the eigenvectors", "B. A target matrix and its inverse", "C. A set of eigenvalues and a structure for the matrix", "D. The trace of the matrix"],
+        answer: "C"
+      },
+      {
+        q: "16. Which of the following is not a valid constraint on a stochastic matrix?",
+        options: ["A. All rows sum to one", "B. All elements are non-negative", "C. The matrix is symmetric", "D. It represents transition probabilities"],
+        answer: "C"
+      },
+      {
+        q: "17. The Markov chain property that makes it memoryless is:",
+        options: ["A. Reversibility", "B. Stationarity", "C. Markov property", "D. Time-homogeneity"],
+        answer: "C"
+      },
+      {
+        q: "18. The stationary distribution of a finite irreducible, aperiodic Markov chain:",
+        options: ["A. Does not exist", "B. Depends on initial state", "C. Is unique and independent of the starting distribution", "D. Changes with time"],
+        answer: "C"
+      },
+      {
+        q: "19. Which application is best modeled using sparse coding?",
+        options: ["A. Image classification using CNNs", "B. Topic modeling in documents", "C. Image denoising or compression using learned basis", "D. Computing exact solutions to linear systems"],
+        answer: "C"
+      },
+      {
+        q: "20. If multiple solutions exist in Ax=b, which is preferred?",
+        options: ["A. Highest norm", "B. Smallest L1 norm", "C. Smallest L2 norm", "D. Highest determinant"],
+        answer: "C"
+      },
+      {
+        q: "21. Sparse coding is best defined as:",
+        options: ["A. Mapping high-dimensional data to labels", "B. Using many atoms", "C. Expressing data with few active coefficients", "D. Projecting onto orthogonal axes"],
+        answer: "C"
+      },
+      {
+        q: "22. The L0 norm counts:",
+        options: ["A. Number of non-zero entries", "B. Sum of entries", "C. Vector length", "D. Square of Euclidean norm"],
+        answer: "A"
+      },
+      {
+        q: "23. The “dictionary” in dictionary learning is:",
+        options: ["A. Hyperparameters", "B. Basis vector matrix", "C. Lookup table", "D. Matrix of eigenvectors"],
+        answer: "B"
+      },
+      {
+        q: "24. Inverse eigenvalue problem is essential when:",
+        options: ["A. Desired dynamic behavior is known", "B. Find eigenvectors", "C. Reduce dimensionality", "D. Gaussian elimination"],
+        answer: "A"
+      },
+      {
+        q: "25. Which is not a sparse recovery objective?",
+        options: ["A. Minimize active coefficients", "B. Exact reconstruction", "C. Minimize L2 norm for sparsity", "D. Minimize L1 norm"],
+        answer: "C"
+      },
+      {
+        q: "26. Unique stationary distribution ensured by:",
+        options: ["A. Diagonalization", "B. Reversibility", "C. Irreducibility & aperiodicity", "D. Non-negative eigenvalues"],
+        answer: "C"
+      },
+      {
+        q: "27. Constructing a Markov chain from π involves:",
+        options: ["A. Making chain symmetric", "B. Solving inverse eigenvalue problem", "C. Designing P such that πP = π", "D. Real eigenvalues"],
+        answer: "C"
+      },
+      {
+        q: "28. Sparsity constraint encourages:",
+        options: ["A. Large values", "B. Many zeros", "C. Positive definite matrix", "D. Same subspace"],
+        answer: "B"
+      },
+      {
+        q: "29. Sparse representation is useful for:",
+        options: ["A. Matrix multiplication", "B. Sorting", "C. Face recognition", "D. PageRank"],
+        answer: "C"
+      },
+      {
+        q: "30. In sparse coding, an “atom” is:",
+        options: ["A. Scalar multiplier", "B. Row in data", "C. Basis vector", "D. Sample input"],
+        answer: "C"
+      },
+      {
+        q: "31. Common sparse solution algorithm is:",
+        options: ["A. K-means", "B. LASSO", "C. Ridge regression", "D. Gaussian elimination"],
+        answer: "B"
+      },
+      {
+        q: "32. A challenge in inverse eigenvalue problem is:",
+        options: ["A. Too few eigenvalues", "B. Non-unique solution", "C. Structural constraints", "D. Only diagonal matrices"],
+        answer: "C"
+      },
+      {
+        q: "33. P is stochastic if:",
+        options: ["A. Columns sum to 1", "B. Rows sum to 1", "C. Determinant is 1", "D. Symmetric eigenvalues"],
+        answer: "B"
+      },
+      {
+        q: "34. Multiple stationary distributions occur when:",
+        options: ["A. Doubly stochastic", "B. Chain is reducible", "C. Chain is aperiodic", "D. Diagonal matrix"],
+        answer: "B"
+      },
+      {
+        q: "35. In compressed sensing, measurements are:",
+        options: ["A. More than variables", "B. Equal to variables", "C. Fewer than variables", "D. Unrelated"],
+        answer: "C"
+      },
+      {
+        q: "36. Not required in dictionary learning:",
+        options: ["A. Overcompleteness", "B. Orthogonality", "C. Sparse coefficients", "D. Signal reconstruction"],
+        answer: "B"
+      },
+      {
+        q: "37. Symmetric matrix ⇒ eigenvalues must be:",
+        options: ["A. Positive", "B. Negative", "C. Real", "D. Complex"],
+        answer: "C"
+      },
+      {
+        q: "38. Type of matrix for Markov transition matrix P:",
+        options: ["A. Identity", "B. Stochastic", "C. Diagonal", "D. Symmetric"],
+        answer: "B"
+      },
+      {
+        q: "39. A stationary distribution is:",
+        options: ["A. Changing every step", "B. Converged distribution", "C. Maximizing entropy", "D. Initial distribution"],
+        answer: "B"
+      },
+      {
+        q: "40. To construct a Markov chain with π, P must:",
+        options: ["A. Rows equal π", "B. Columns sum to 0", "C. Rows sum to 1", "D. All eigenvalues zero"],
+        answer: "C"
+      }
+    ];
+
+    function renderQuestions() {
+      const container = document.getElementById("question-list");
+      questions.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `<p>${item.q}</p>` +
+          item.options.map(opt => `
+            <label>
+              <input type="radio" name="q${index + 1}" value="${opt.charAt(0)}"> ${opt}
+            </label>`).join("");
+        container.appendChild(div);
+      });
     }
 
-    const eventDate = new Date("May 25, 2025 12:00:00").getTime();
-    const countdownEl = document.getElementById("countdown");
+    function submitQuiz() {
+      let score = 0;
+      questions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index + 1}"]:checked`);
+        if (selected && selected.value === item.answer) {
+          score++;
+        }
+      });
+      document.getElementById("result").textContent = `✅ You scored ${score} out of ${questions.length}`;
+    }
 
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const diff = eventDate - now;
-
-      if (diff < 0) {
-        clearInterval(timer);
-        countdownEl.innerHTML = "🎈 We are now open! Come celebrate with us!";
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      countdownEl.innerHTML = `⏳ Opening in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
+    renderQuestions();
   </script>
 </body>
 </html>
