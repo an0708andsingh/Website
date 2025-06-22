@@ -1,66 +1,52 @@
-/* External CSS - style.css */
-
-body {
-  background-color: #f3f9ff;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
+.quiz-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f5f9ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-#main-heading {
-  background-color: #004aad;
-  color: white;
-  padding: 15px;
+h1 {
   text-align: center;
-  border-bottom: 4px solid #003580;
+  color: #2a4d9b;
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 20px;
-}
-
-.product-item {
-  background-color: white;
-  border: 2px solid #ccc;
+.question {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #dbe5f1;
   border-radius: 10px;
-  width: 300px;
-  margin: 15px;
-  padding: 15px;
-  text-align: center;
-  position: relative;
 }
 
-.product-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  border-radius: 5px;
-}
-
-.product-name {
-  color: #004aad;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.product-price {
-  color: green;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.btn {
-  background-color: #ff6f00;
-  color: white;
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
+label {
+  display: block;
+  margin: 5px 0;
   cursor: pointer;
-  position: relative;
+}
+
+button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #2a4d9b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #193673;
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: green;
+  margin-top: 20px;
 }
