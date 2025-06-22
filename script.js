@@ -1393,7 +1393,6 @@ const questionsByUnit = {
     }
   ]
 };
-
 function startQuiz() {
   const selectedUnits = Array.from(document.querySelectorAll('input[name="unit"]:checked'))
     .map(el => el.value);
@@ -1424,7 +1423,7 @@ function renderQuestions(questions) {
       html += `
         <label>
           <input type="radio" name="q${index}" value="${String.fromCharCode(65 + i)}" />
-          ${opt}
+          <span>${opt}</span>
         </label>`;
     });
 
@@ -1436,6 +1435,9 @@ function renderQuestions(questions) {
   submitBtn.innerText = "Submit Quiz";
   submitBtn.onclick = () => evaluateQuiz(questions);
   quizArea.appendChild(submitBtn);
+
+  // Clear previous result
+  document.getElementById('result').innerHTML = '';
 }
 
 function evaluateQuiz(questions) {
@@ -1443,10 +1445,41 @@ function evaluateQuiz(questions) {
 
   questions.forEach((q, index) => {
     const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const options = document.getElementsByName(`q${index}`);
+    const correctIndex = q.answer.charCodeAt(0) - 65;
+
+    // Get the question div for highlighting
+    const qDiv = document.getElementsByClassName('question')[index];
+    qDiv.classList.remove('question-wrong'); // Remove previous highlight
+
+    options.forEach((opt, i) => {
+      // Remove previous highlights
+      opt.parentElement.classList.remove('correct-answer', 'wrong-answer');
+      // Disable all options after submission
+     // opt.disabled = true;
+    });
+
     if (selected && selected.value === q.answer) {
       score++;
+      options[correctIndex].parentElement.classList.add('correct-answer');
+    } else {
+      // Highlight user's wrong answer in red
+      if (selected) {
+        selected.parentElement.classList.add('wrong-answer');
+      }
+      // Highlight correct answer in green
+      options[correctIndex].parentElement.classList.add('correct-answer');
+
+      // Add "(Correct answer)" label if not already present
+      let label = options[correctIndex].parentElement;
+      if (!label.innerHTML.includes('(Correct answer)')) {
+        label.innerHTML += ' <span style="font-size:90%;">(Correct answer)</span>';
+      }
+
+      // Highlight the entire question box in red
+      qDiv.classList.add('question-wrong');
     }
   });
 
-  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+  document.getElementById('result').innerHTML = `You scored ${score} out of ${questions.length}`;
 }
