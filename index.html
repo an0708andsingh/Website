@@ -3,25 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linear Algebra Quiz</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>A4 Image Resizer</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+    canvas { border: 1px solid #ccc; background: #fff; }
+    #controls { margin: 15px 0; }
+  </style>
 </head>
 <body>
-  <h1>Linear Algebra Quiz - Select Units</h1>
-  <form id="unit-selection">
-    <label><input type="checkbox" name="unit" value="unit1"> Unit 1</label>
-    <label><input type="checkbox" name="unit" value="unit2"> Unit 2</label>
-    <label><input type="checkbox" name="unit" value="unit3"> Unit 3</label>
-    <label><input type="checkbox" name="unit" value="unit4"> Unit 4</label>
-    <label><input type="checkbox" name="unit" value="unit5"> Unit 5</label>
-    <label><input type="checkbox" name="unit" value="unit6"> Unit 6</label>
-    <br /><br />
-    <button type="button" onclick="startQuiz()">Start Quiz</button>
-  </form>
+  <h2>A4 Sheet Image Resizer (for PAN Card etc.)</h2>
+  <div id="controls">
+    <input type="file" id="upload" accept="image/*" />
+    <button onclick="downloadCanvas()">Download PNG</button>
+  </div>
+  <canvas id="a4Canvas" width="2480" height="3508"></canvas>
 
-  <div id="quiz-area"></div>
-  <div id="result"></div>
+  <script>
+    const canvas = document.getElementById("a4Canvas");
+    const ctx = canvas.getContext("2d");
+    let img = new Image();
+    let imgX = 100, imgY = 100, imgW = 1024, imgH = 320;
+    let dragging = false, resizing = false, offsetX, offsetY;
 
-  <script src="script.js"></script>
+    document.getElementById("upload").addEventListener("change", function (e) {
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        img.src = event.target.result;
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    });
+
+    img.onload = function () {
+      draw();
+    };
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, imgX, imgY, imgW, imgH);
+      ctx.strokeStyle = "#000";
+      ctx.strokeRect(imgX, imgY, imgW, imgH);
+    }
+
+    canvas.addEventListener("mousedown", function (e) {
+      const mx = e.offsetX, my = e.offsetY;
+      if (
+        mx >= imgX + imgW - 10 && mx <= imgX + imgW &&
+        my >= imgY + imgH - 10 && my <= imgY + imgH
+      ) {
+        resizing = true;
+      } else if (
+        mx >= imgX && mx <= imgX + imgW &&
+        my >= imgY && my <= imgY + imgH
+      ) {
+        dragging = true;
+        offsetX = mx - imgX;
+        offsetY = my - imgY;
+      }
+    });
+
+    canvas.addEventListener("mousemove", function (e) {
+      if (dragging) {
+        imgX = e.offsetX - offsetX;
+        imgY = e.offsetY - offsetY;
+        draw();
+      }
+      if (resizing) {
+        imgW = e.offsetX - imgX;
+        imgH = e.offsetY - imgY;
+        draw();
+      }
+    });
+
+    canvas.addEventListener("mouseup", function () {
+      dragging = false;
+      resizing = false;
+    });
+
+    function downloadCanvas() {
+      const link = document.createElement('a');
+      link.download = 'a4_image_output.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
 </body>
 </html>
